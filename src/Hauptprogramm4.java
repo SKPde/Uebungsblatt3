@@ -10,16 +10,21 @@ public class Hauptprogramm4 {
 		addElement("Halberstung");
 		addElement("#Bleifuß");
 		addElement("Mini-EL");
-
-		System.out.println(testliste.get(0));
-		System.out.println(testliste.get(1));
-		System.out.println(testliste.get(2));
+		
+		listeAusgeben();
 
 		removeElement();
 
-		System.out.println(testliste.get(0));
-		System.out.println(testliste.get(1));
-		System.out.println(testliste.get(2));
+		listeAusgeben();
+		
+		removeElement();
+		
+		listeAusgeben();
+		
+		addElement("Zoller");
+		addElement("Zeuge");
+		
+		listeAusgeben();
 	}
 
 	public static void addElement(String element) {
@@ -30,9 +35,15 @@ public class Hauptprogramm4 {
 
 		for (int x = 0; x < testliste.size(); x++) {
 			if (testliste.get(x) != null) {
-				testliste.set(0, null);
+				testliste.set(x, null);
 				break;
 			}
+		}
+	}
+	
+	public static void listeAusgeben() {
+		for(int x = 0; x < testliste.size(); x++) {
+			System.out.println(testliste.get(x));
 		}
 	}
 }
