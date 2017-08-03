@@ -8,6 +8,8 @@ public class Hauptprogramm5 {
 		test.insert("DJ Zoller");
 		
 		System.out.println(test);
+		
+		
 	}
 
 }

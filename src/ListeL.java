@@ -18,7 +18,7 @@ public class ListeL<I extends Comparable<I>> {
   public ListeL (I o) {
     head = new ElementL<I>(o);
   }
-  
+
   public ElementL<I> insert (I o) {   // am Anfang einf�gen
     ElementL<I> newEl = new ElementL<I>(o);
     if (head == null) { // Liste ist noch leer
