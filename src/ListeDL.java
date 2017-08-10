@@ -40,12 +40,17 @@ public class ListeDL<T> {
 			if (temp1.element.equals(pos.element)) {
 
 				if (temp1 != tail && temp1 != head) {
-					//temp1.prev.next = temp1.next;
-					//temp1.next.prev = temp1.prev;
+					temp1.prev.next = neuesEL;
+					neuesEL.next = temp1;
+					neuesEL.prev = temp1.prev;
+					temp1.prev = neuesEL;
 
 				} else if (temp1 == tail) {
-					//temp1.prev.next = null;
-					//tail = temp1.prev;
+					temp1.prev.next = neuesEL;
+					neuesEL.prev = temp1.prev;
+					temp1.prev = neuesEL;
+					neuesEL.next = temp1;
+					temp1 = tail;
 
 				} else if (temp1 == head) {
 					neuesEL.next = temp1;
@@ -53,8 +58,6 @@ public class ListeDL<T> {
 					head = neuesEL;
 				}
 
-				//temp1.next = null;
-				//temp1.prev = null;
 				break;
 			}
 			temp1 = temp1.next;
@@ -112,8 +115,8 @@ public class ListeDL<T> {
 		System.out.println(liste);
 		// System.out.println(liste.tail.prev.element.toString());
 		liste.remove(new ElementDL<String>("Jens Maier"));
-		liste.insert("Pfupferle",new ElementDL<String>("Kevin Zoller"));
 		liste.insert("Sandy");
+		liste.insert("Pfupferle", new ElementDL<String>("Jochen Doll"));
 
 		System.out.println(liste);
 	}
