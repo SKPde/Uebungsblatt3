@@ -39,7 +39,19 @@ public class ListeDL<T> {
 	}
 
 	public void remove(ElementDL<T> e) {
-
+		ElementDL<T> temp1 = head;
+		while(temp1 != null) {
+			if(temp1.element.equals(e.element)) {
+				System.out.println(temp1.element.toString());
+				temp1.prev.next = temp1.next;
+				temp1.next.prev = temp1.prev;
+				temp1.next = null;
+				temp1.prev = null;
+				break;
+			}
+			temp1 = temp1.next;
+		}
+		
 	}
 
 	public String toString() {
@@ -64,7 +76,10 @@ public class ListeDL<T> {
 		liste.insert("Jens Maier");
 		
 		System.out.println(liste);
-		System.out.println(liste.tail.prev.element.toString());
+		//System.out.println(liste.tail.prev.element.toString());
+		liste.remove(new ElementDL<String>("Jochen Doll"));
+		
+		System.out.println(liste);
 	}
 
 }
