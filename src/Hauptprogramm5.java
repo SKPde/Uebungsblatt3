@@ -6,8 +6,9 @@ public class Hauptprogramm5 {
 		ListeL<String> test = new ListeL<String>();
 		test.insert("Halberstung");
 		test.insert("DJ Zoller");
-		
+		test.insert("Simon Kübel");
 		System.out.println(test);
+		
 		
 		
 		

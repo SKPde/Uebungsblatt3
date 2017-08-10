@@ -17,4 +17,23 @@ public class ListeDL<T> {
 	private ElementDL<T> head; // Referenz auf Anfang der Liste
 	private ElementDL<T> tail; // Referenz auf Ende der Liste
 	
+	public ElementDL<T> insert (T o){
+		return null;
+		
+	}
+	
+	public ElementDL<T> insert (T o, ElementDL<T> pos){
+		return null;
+		
+	}
+	
+	public void remove (ElementDL<T> e) {
+		
+	}
+	
+	public String toString() {
+		return null;
+		
+	}
+	
 }
