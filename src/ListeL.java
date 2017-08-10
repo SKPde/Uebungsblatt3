@@ -46,9 +46,16 @@ public class ListeL<I extends Comparable<I>> {
   
   public ElementL<I> insert (ElementL<I> pos, I o){
 	  ElementL<I> temp = head;
-	  ElementL<I> temp2 = temp.next;;
+	  ElementL<I> temp2 = temp.next;
+	  
+	  if(head.inhalt.equals(pos.inhalt)) {
+		  ElementL<I> ein = new ElementL<I>(o);
+		  ein.next = head;
+		  head = ein;
+	  }
+	  
 	  while(temp.next != null) {
-		  if(temp.next.equals(pos)) {
+		  if(temp.next.inhalt.equals(pos.inhalt)) {
 			  temp2 = temp.next;
 			  temp.next = new ElementL<I>(o);
 			  temp.next.next = temp2;
@@ -86,21 +93,15 @@ public class ListeL<I extends Comparable<I>> {
   
   public static void main (String[] args) {
     ListeL<Integer> l = new ListeL<Integer>();
-    l.insert(0);
-    ElementL<Integer> eins = l.insert(new Integer(1));
-    ElementL<Integer> zero = l.insert(new Integer(0));
-    ElementL<Integer> sechs = l.insert(new Integer(6));
+    l.insert(5);
     l.insert(3);
+    l.insert(25);
+    l.insert(9);
+    
     System.out.println(l);
-    l.insert(2, eins);  // nach eins einf�gen
-    System.out.println(l);
-    l.remove(eins);  // Nachfolger von eins l�schen
-    System.out.println(l);
-    l.insert(eins, 45);
-    System.out.println(l);
-    l.insert(sechs, 18);
-    System.out.println(l);
-    l.insert(zero, 99);
+    
+    l.insert(new ElementL<Integer>(25), 12);
+    
     System.out.println(l);
   }
   
