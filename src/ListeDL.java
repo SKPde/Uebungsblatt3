@@ -16,24 +16,52 @@ public class ListeDL<T> {
 
 	private ElementDL<T> head; // Referenz auf Anfang der Liste
 	private ElementDL<T> tail; // Referenz auf Ende der Liste
-	
+
 	public ElementDL<T> insert (T o){
+		ElementDL<T> neuesEL = new ElementDL<T>(o);
+		if(head == null) {
+			head = neuesEL;
+			tail = head;
+			} else {
+				tail.next = neuesEL;
+				tail = neuesEL;
+			}
+		
+		return neuesEL;
+		
+	}
+
+	public ElementDL<T> insert(T o, ElementDL<T> pos) {
 		return null;
-		
+
 	}
-	
-	public ElementDL<T> insert (T o, ElementDL<T> pos){
-		return null;
-		
+
+	public void remove(ElementDL<T> e) {
+
 	}
-	
-	public void remove (ElementDL<T> e) {
-		
-	}
-	
+
 	public String toString() {
-		return null;
+		ElementDL<T> zeigen = head;
+		String ausgabe = "";
+		while(zeigen != null) {
+			ausgabe = ausgabe + " [" + zeigen.element.toString() + "] ";
+			zeigen = zeigen.next;
+		}
 		
+		
+		return ausgabe;
 	}
 	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ListeDL<String> liste = new ListeDL<String>();
+		liste.insert("Kevin Zoller");
+		liste.insert("Simonk Übel");
+		liste.insert("Jochen Doll");
+		liste.insert("Jens Maier");
+		
+		System.out.println(liste);
+	}
+
 }
