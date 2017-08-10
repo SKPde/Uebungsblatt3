@@ -22,8 +22,10 @@ public class ListeDL<T> {
 		if(head == null) {
 			head = neuesEL;
 			tail = head;
+			neuesEL.prev = null;
 			} else {
 				tail.next = neuesEL;
+				neuesEL.prev = tail;
 				tail = neuesEL;
 			}
 		
@@ -62,6 +64,7 @@ public class ListeDL<T> {
 		liste.insert("Jens Maier");
 		
 		System.out.println(liste);
+		System.out.println(liste.tail.prev.element.toString());
 	}
 
 }
