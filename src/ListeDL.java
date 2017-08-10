@@ -34,25 +34,49 @@ public class ListeDL<T> {
 	}
 
 	public ElementDL<T> insert(T o, ElementDL<T> pos) {
-		return null;
+		ElementDL<T> temp1 = head;
+		ElementDL<T> neuesEL = new ElementDL<T>(o);
+		while (temp1 != null) {
+			if (temp1.element.equals(pos.element)) {
 
+				if (temp1 != tail && temp1 != head) {
+					//temp1.prev.next = temp1.next;
+					//temp1.next.prev = temp1.prev;
+
+				} else if (temp1 == tail) {
+					//temp1.prev.next = null;
+					//tail = temp1.prev;
+
+				} else if (temp1 == head) {
+					neuesEL.next = temp1;
+					temp1.prev = neuesEL;
+					head = neuesEL;
+				}
+
+				//temp1.next = null;
+				//temp1.prev = null;
+				break;
+			}
+			temp1 = temp1.next;
+		}
+		return neuesEL;
 	}
 
 	public void remove(ElementDL<T> e) {
 		ElementDL<T> temp1 = head;
 		while (temp1 != null) {
 			if (temp1.element.equals(e.element)) {
-				
+
 				if (temp1 != tail && temp1 != head) {
 					temp1.prev.next = temp1.next;
 					temp1.next.prev = temp1.prev;
-					
+
 				} else if (temp1 == tail) {
 					temp1.prev.next = null;
 					tail = temp1.prev;
-					
+
 				} else if (temp1 == head) {
-					
+
 					head = temp1.next;
 					temp1.next.prev = null;
 				}
@@ -87,7 +111,9 @@ public class ListeDL<T> {
 
 		System.out.println(liste);
 		// System.out.println(liste.tail.prev.element.toString());
-		liste.remove(new ElementDL<String>("Kevin Zoller"));
+		liste.remove(new ElementDL<String>("Jens Maier"));
+		liste.insert("Pfupferle",new ElementDL<String>("Kevin Zoller"));
+		liste.insert("Sandy");
 
 		System.out.println(liste);
 	}
