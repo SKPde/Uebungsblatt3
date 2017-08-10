@@ -48,7 +48,7 @@ public class ListeL<I extends Comparable<I>> {
 	  ElementL<I> temp = head;
 	  ElementL<I> temp2 = temp.next;;
 	  while(temp.next != null) {
-		  if(temp.equals(pos)) {
+		  if(temp.next.equals(pos)) {
 			  temp2 = temp.next;
 			  temp.next = new ElementL<I>(o);
 			  temp.next.next = temp2;
@@ -99,6 +99,7 @@ public class ListeL<I extends Comparable<I>> {
     l.insert(eins, 45);
     System.out.println(l);
     l.insert(sechs, 18);
+    System.out.println(l);
     l.insert(zero, 99);
     System.out.println(l);
   }
