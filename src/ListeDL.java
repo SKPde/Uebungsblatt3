@@ -119,6 +119,9 @@ public class ListeDL<T> {
 		liste.insert("Pfupferle", new ElementDL<String>("Jochen Doll"));
 
 		System.out.println(liste);
+		
+		//RuntimeException fehler = new RuntimeException("Dieser Fehler ist ein Test");
+		//throw fehler;
 	}
 
 }
